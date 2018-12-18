@@ -17,7 +17,7 @@ body {
 	
 }	
 .container {
-	font: 1em   Arial, Helvetica, sans-serif;
+	font: 1.5em   Arial, Helvetica, sans-serif;
 }	
 
 video {
@@ -29,4 +29,9 @@ video {
 	background-color:#fff;
 	color: #818181;
 	padding:10px;
+	line-height: 32px;
+}
+
+.highlight {
+	color: #fdb25e;
 }
