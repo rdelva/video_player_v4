@@ -11,25 +11,28 @@ body {
 
 .wrapper {
 	
-	margin: 0 auto;
-	width: 95%
-
+	margin: 10px auto;
+	width: 90%;
+	background-color:#fff;
+	padding:10px 20px;
+	border-radius: 5px;
+}	
 	
-}	
-.container {
-	font: 1.5em   Arial, Helvetica, sans-serif;
-}	
 
-video {
-	width: 100%;
-	max-width: 100%;
+
+.video_wrapper {
+		margin:0 auto;
+		display: block;
+		width:845px;
+		height:480px;
 }
 
 .video_caption {
 	background-color:#fff;
 	color: #818181;
-	padding:10px;
+	margin-top:10px;
 	line-height: 32px;
+	font: 1.5em   Arial, Helvetica, sans-serif;
 }
 
 .highlight {
@@ -44,7 +47,7 @@ video {
 }
 @media (min-width: 769px) {
 	.wrapper {
-		max-width: 1024px;
+		max-width:1400px;
 	}	
 
 }

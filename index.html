@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Video Player</title>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="js/mediaelement/mediaelementplayer.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Video Player</title>
+				
+		<link href="css/normalize.css" rel="stylesheet">
+		<link href="js/mediaelement/mediaelementplayer.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class="wrapper">
-			<div class="container">
-
-				<!-- Video -->
+		<div class="wrapper">		
 				<div class="video_wrapper">
-					<video class="mejs_player">
+					<video width="852" height="480">
 						<source src="video/video.mp4" type="video/mp4">
 						<source src="video/video.ogg" type="video/mp4">
-						<track label="English" kind="subtitles" srclang="en" src="captions.vtt" default />
+						<!--<track label="English" kind="subtitles" srclang="en" src="captions.vtt" default />-->
 					</video>
-				</div>
-				<!-- Video -->
+				</div> <!-- end of Video Wrapper -->
+				
 				<div class="video_caption">
 					
 					<p>	
@@ -93,7 +92,7 @@
 					</p>					
 				</div>
 
-			</div> <!-- end of container --> 
+			
 		</div><!-- wrapper tag-->
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
