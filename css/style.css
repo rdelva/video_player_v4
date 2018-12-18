@@ -9,7 +9,7 @@ body {
 
 }
 
-.wrapper, .mejs_player {
+.wrapper {
 	
 	margin: 0 auto;
 	width: 95%
@@ -25,7 +25,7 @@ video {
 	max-width: 100%;
 }
 
-.text {
+.video_caption {
 	background-color:#fff;
 	color: #818181;
 	padding:10px;
@@ -34,4 +34,17 @@ video {
 
 .highlight {
 	color: #fdb25e;
+}
+
+@media (min-width: 768px) {
+	.wrapper {
+		max-width:768px;
+	}	
+
+}
+@media (min-width: 769px) {
+	.wrapper {
+		max-width: 1024px;
+	}	
+
 }
