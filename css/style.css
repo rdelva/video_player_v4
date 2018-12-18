@@ -17,13 +17,7 @@ body {
 	
 }	
 .container {
-	
 	font: 1em   Arial, Helvetica, sans-serif;
-
-;
-
-
-
 }	
 
 video {
@@ -31,3 +25,8 @@ video {
 	max-width: 100%;
 }
 
+.text {
+	background-color:#fff;
+	color: #818181;
+	padding:10px;
+}
