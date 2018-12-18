@@ -4,19 +4,20 @@
 		<title>Video Player</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!--<link href="mediaelement/build/mediaelementplayer.css">-->
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="wrapper">
 			<div class="container">
 
-				
-				<video>
+				<!-- Video -->
+				<video width="852" height="480" class="mejs__player" controls>
 					<source src="video/video.mp4" type="video/mp4">
 					<source src="video/video.ogg" type="video/mp4">
-					<track label="English" kind="subtitles" srclang="en" src="mockups/captions.vtt">	
+					<track label="English" kind="subtitles" srclang="en" src="captions.vtt">
 				</video>
-			
+			<!-- Video -->
 				<div class="text">
 					
 				</div>
@@ -24,8 +25,8 @@
 			</div> <!-- end of container --> 
 		</div><!-- wrapper tag-->
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="mediaelement/js/player.js"></script>	
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="mediaelement/build/mediaelement-and-player.js"></script>	-->
 		<script src="js/script.js" type="text/javascript"></script>
 	</body>
 </html>

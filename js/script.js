@@ -1,2 +1,2 @@
 
-$('video').mediaelementplayer();
+/*$('video').mediaelementplayer();*/
