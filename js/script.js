@@ -9,7 +9,7 @@ function captionListener () {
 
 	const p = document.getElementsByTagName('p');
 	const caption = document.querySelector('.caption');
-	const span = document.querySelectorAll('p span');
+	const span = document.querySelectorAll('p > span');
 	/*const t_start = document.querySelectorAll('[data-start]');
 	const t_end = document.querySelectorAll('[data-end]');*/
 	const video = document.querySelector('video');
@@ -23,11 +23,13 @@ function captionListener () {
 
 		for (let i = 0; i <= span.length; i++ ) {
 
-				let t_start = span[i].getAttribute(data-start);
-				let t_end = span[i].getAttribute(data-end);
+				let t_start = span[i].getAttribute('data-start');
+				console.log("Start " + t_start);
+				let t_end = span[i].getAttribute('data-end');
+				console.log("Start " + t_start);
 
 
-			if ((timeStamp >= span[i].dataset.start)) && (timeStamp <= Math.floor (span[i].dataset.end))) {
+			if (timeStamp >=  t_start && timeStamp <= t_end) {
 				
 				span[i].setAttribute("class", "highlight");
 			}
