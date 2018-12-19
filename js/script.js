@@ -9,29 +9,37 @@ function captionListener () {
 
 	const p = document.getElementsByTagName('p');
 	const caption = document.querySelector('.caption');
-	const span = document.querySelectorAll('p > span');
-	/*const t_start = document.querySelectorAll('[data-start]');
-	const t_end = document.querySelectorAll('[data-end]');*/
+	const spanText = document.querySelectorAll('p  span');
+	
 	const video = document.querySelector('video');
 	let trackTime;
+	let t_start;
+	let t_end;
+	let timeStamp;
+	let prevSpan
 
-	console.log(span);
+	console.log(spanText);
 	video.addEventListener('timeupdate', function() {
-		//console.log (span[0].dataset.start);
 		
-		let timeStamp   = video.currentTime;
+		timeStamp = video.currentTime;
+		for (let i = 0; i < spanText.length; i++ ) {
 
-		for (let i = 0; i <= span.length; i++ ) {
-
-				let t_start = span[i].getAttribute('data-start');
-				console.log("Start " + t_start);
-				let t_end = span[i].getAttribute('data-end');
-				console.log("Start " + t_start);
-
+				t_start = spanText[i].dataset.start;
+				t_end = spanText[i].dataset.end;
 
 			if (timeStamp >=  t_start && timeStamp <= t_end) {
+
+				spanText[i].setAttribute("class", "highlight");
 				
-				span[i].setAttribute("class", "highlight");
+				if (i < spanText.length) {
+					
+					prevSpan = spanText[i].previousElementSibling;
+					if  (prevSpan !== null) {
+						prevSpan.removeAttribute('class');
+					}	
+				}
+
+				
 			}
 
 		
