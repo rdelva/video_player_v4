@@ -18,12 +18,12 @@ function captionListener () {
 	let timeStamp;
 	let prevSpan
 
-	console.log(spanText);
-	video.addEventListener('timeupdate', function() {
+	video.addEventListener('timeupdate', function(e) {
 		
 		timeStamp = video.currentTime;
-		for (let i = 0; i < spanText.length; i++ ) {
 
+		for (let i = 0; i < spanText.length; i++ ) {
+				console.log("Counter " + i);
 				t_start = spanText[i].dataset.start;
 				t_end = spanText[i].dataset.end;
 
@@ -31,7 +31,7 @@ function captionListener () {
 
 				spanText[i].setAttribute("class", "highlight");
 				
-				if (i < spanText.length) {
+				if (i < spanText.length || i === spanText.length) {
 					
 					prevSpan = spanText[i].previousElementSibling;
 					if  (prevSpan !== null) {
