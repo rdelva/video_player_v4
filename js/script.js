@@ -9,38 +9,36 @@ function captionListener () {
 
 	const p = document.getElementsByTagName('p');
 	const caption = document.querySelector('.caption');
-	const spanText = document.querySelectorAll('p  span');
-	
-	const video = document.querySelector('video');
+				const video = document.querySelector('video');
+			const spanText = document.querySelectorAll('p > span');
+
 	let trackTime;
-	let t_start;
-	let t_end;
+	let t_start = 0;
+	let t_end = 0;
 	let timeStamp;
 	let prevSpan
 
 	
 
-
-	video.addEventListener('timeupdate play', function(e) {
-
-		let timer = Math.floor(video.duration);
-	
-
-		
-		
-		console.log(timeStamp);
-
-		for (let i = 0; i < spanText.length; i++ ) {
-			timeStamp = video.currentTime;
+//click video to start counter
+//
+	video.addEventListener('timeupdate', function() {
 
 
-			console.log(i);
+
+		for (let i = 0; i <  spanText.length; i++ ) {
+
+
+				timeStamp = video.currentTime;  
+				console.log ("duration " + video.duration);
+				console.log ("Counter " + i);
 
 				t_start = spanText[i].dataset.start;
 				t_end = spanText[i].dataset.end;
 
 			if (timeStamp >=  t_start && timeStamp <= t_end) {
-
+					console.log ("Counter " + i);
+	
 				spanText[i].setAttribute("class", "highlight");
 				
 				if (i < spanText.length || i === spanText.length) {

@@ -21,6 +21,7 @@ body {
 
 
 .video_wrapper {
+	max-width: 100%;
 		margin:0 auto;
 		display: block;
 		width:845px;
