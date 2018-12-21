@@ -18,12 +18,24 @@ function captionListener () {
 	let timeStamp;
 	let prevSpan
 
-	video.addEventListener('timeupdate', function(e) {
+	
+
+
+	video.addEventListener('timeupdate play', function(e) {
+
+		let timer = Math.floor(video.duration);
+	
+
 		
-		timeStamp = video.currentTime;
+		
+		console.log(timeStamp);
 
 		for (let i = 0; i < spanText.length; i++ ) {
-				console.log("Counter " + i);
+			timeStamp = video.currentTime;
+
+
+			console.log(i);
+
 				t_start = spanText[i].dataset.start;
 				t_end = spanText[i].dataset.end;
 
@@ -36,7 +48,12 @@ function captionListener () {
 					prevSpan = spanText[i].previousElementSibling;
 					if  (prevSpan !== null) {
 						prevSpan.removeAttribute('class');
-					}	
+					}
+					/*else if (prevSpan == spanText[i].lastElementChild )
+					{
+										spanText[i].setAttribute("class", "highlight");
+
+					}	*/
 				}
 
 				
