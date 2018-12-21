@@ -18,7 +18,10 @@ body {
 	border-radius: 5px;
 }	
 	
-
+	video {
+		max-width: 100%;
+		width: 100%;
+	}
 
 .video_wrapper {
 	max-width: 100%;
