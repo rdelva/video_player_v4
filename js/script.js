@@ -40,11 +40,11 @@ video.addEventListener('play', function(){
 
 				if (track >= dataStart && track <= dataEnd ){
 
+					
 					script[i].setAttribute('class', 'highlight');
 					let prevTrack = script[i].previousElementSibling;
-											console.log("Item " + prevTrack);
+											
 
-					//highlightOn = true;  //lets the programmer know the highlight is turned on
 
 					if (prevTrack !== null) {
 
@@ -52,17 +52,15 @@ video.addEventListener('play', function(){
 
 					}
 
-					else {
-						
+					else if (prevTrack == script[i]) {
+							script[i].setAttribute('class', 'highlight');
+
 					}
 
 
 
 				}
-				else {
-					highlightOn = false;
-				}
-
+			
 
 				console.log("Counter " + i);
 				console.log("Tracktime " + track);
