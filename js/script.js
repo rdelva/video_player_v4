@@ -7,8 +7,8 @@ $('video').mediaelementplayer({
 
 
 const video = document.querySelector('video');
-const script = document.querySelectorAll('p span');
-const p = document.querySelector('p');
+const script = document.querySelectorAll('span');
+const p = document.querySelectorAll('p');
 let trackSelected = "";
 
 
@@ -42,22 +42,22 @@ video.addEventListener('play', function(){
 		}// end of for loop
 
 
-			p.addEventListener('click', function(event){
+			document.addEventListener('click', function(event){
 
 
 
 				if (trackSelected == ""){
 					event.target.setAttribute('class', 'highlight');
-					trackSelected = p.querySelector('.highlight');
+					trackSelected = document.querySelector('.highlight');
 					video.currentTime = trackSelected.dataset.start;
 				}
 
 
 				else {
-					trackSelected = p.querySelector('.highlight');
+					trackSelected = document.querySelector('.highlight');
 					trackSelected.removeAttribute('class');
 					event.target.setAttribute('class', 'highlight');
-					trackSelected = p.querySelector('.highlight');
+					trackSelected = document.querySelector('.highlight');
 					video.currentTime = trackSelected.dataset.start;
 
 				}
