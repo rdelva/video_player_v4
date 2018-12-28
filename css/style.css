@@ -43,6 +43,18 @@ video {
 	color: #fdb25e;
 }
 
+
+.mejs__time-current,
+.mejs__time-handle-content {
+    background: rgba(253,178,94, 0.9);
+}
+
+.mejs__time {
+	color:#fdb25e;
+	font-size:24px;
+}
+
+
 @media (min-width: 768px) {
 	.wrapper {
 		max-width:768px;
