@@ -9,7 +9,7 @@ $('video').mediaelementplayer({
 const video = document.querySelector('video');
 const script = document.querySelectorAll('p span');
 const p = document.querySelector('p');
-		let trackSelected = "";
+let trackSelected = "";
 
 
 video.addEventListener('play', function(){
@@ -53,14 +53,15 @@ p.addEventListener('click', function(event){
 		if (trackSelected == ""){
 			event.target.setAttribute('class', 'highlight');
 			trackSelected = p.querySelector('.highlight');
-			console.log(trackSelected.dataset.start);
+			video.currentTime = trackSelected.dataset.start;
 
 		}
 		else {
 			trackSelected = p.querySelector('.highlight');
 			trackSelected.removeAttribute('class');
 			event.target.setAttribute('class', 'highlight');
-
+			trackSelected = p.querySelector('.highlight');
+			video.currentTime = trackSelected.dataset.start;
 
 		}
 

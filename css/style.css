@@ -55,3 +55,7 @@ video {
 	}	
 
 }
+
+p {
+	cursor: pointer;
+}
