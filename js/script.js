@@ -20,6 +20,7 @@ video.addEventListener('play', function(){
 		let track = video.currentTime;  // keeps track of the track time.
 		let timer = Math.floor(video.duration);
 
+
 		for (let i = 0; i < script.length;  i++){
 				
 				let dataStart = script[i].dataset.start;
@@ -27,13 +28,24 @@ video.addEventListener('play', function(){
 
 				if (track > dataStart && track < dataEnd ){
 					script[i].setAttribute('class', 'highlight');
-					let prevTrack = script[i].previousElementSibling;						
+					let prevTrack = script[i].previousElementSibling;
+
 
 
 					if (prevTrack !== null) { // checks to see ifs not at the begining
 
 
 						prevTrack.removeAttribute('class');
+
+					}
+
+					else {
+						let highlight = document.querySelector('.highlight');
+						let prevParagrah = highlight.parentNode;
+						console.log(prevParagrah);
+						let lastLine = prevParagrah.lastElementChild;
+						lastLine.removeAttribute('class');
+
 
 					}
 
