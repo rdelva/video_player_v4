@@ -39,7 +39,35 @@ video.addEventListener('play', function(){
 
 				}
 			
-		}
+		}// end of for loop
+
+
+			p.addEventListener('click', function(event){
+
+
+
+			if (trackSelected == ""){
+				event.target.setAttribute('class', 'highlight');
+				trackSelected = p.querySelector('.highlight');
+				video.currentTime = trackSelected.dataset.start;
+			}
+
+
+			else {
+				trackSelected = p.querySelector('.highlight');
+				trackSelected.removeAttribute('class');
+				event.target.setAttribute('class', 'highlight');
+				trackSelected = p.querySelector('.highlight');
+				video.currentTime = trackSelected.dataset.start;
+
+			}
+
+
+
+		});
+
+
+
 
 
 
@@ -48,24 +76,4 @@ video.addEventListener('play', function(){
 
 });
 
-p.addEventListener('click', function(event){
-
-		if (trackSelected == ""){
-			event.target.setAttribute('class', 'highlight');
-			trackSelected = p.querySelector('.highlight');
-			video.currentTime = trackSelected.dataset.start;
-
-		}
-		else {
-			trackSelected = p.querySelector('.highlight');
-			trackSelected.removeAttribute('class');
-			event.target.setAttribute('class', 'highlight');
-			trackSelected = p.querySelector('.highlight');
-			video.currentTime = trackSelected.dataset.start;
-
-		}
-
-
-
-});
 
