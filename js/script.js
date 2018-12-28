@@ -52,13 +52,16 @@ p.addEventListener('click', function(event){
 
 		if (trackSelected == ""){
 			event.target.setAttribute('class', 'highlight');
-			trackSelected = p.querySelectorAll('.highlight');
-			console.log("Selected " + trackSelected);
+			trackSelected = p.querySelector('.highlight');
+			console.log(trackSelected.dataset.start);
 
 		}
 		else {
-			trackSelected = document.querySelectorAll('.highlight');
-			console.log(trackSelected);
+			trackSelected = p.querySelector('.highlight');
+			trackSelected.removeAttribute('class');
+			event.target.setAttribute('class', 'highlight');
+
+
 		}
 
 
