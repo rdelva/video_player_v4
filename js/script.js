@@ -42,7 +42,6 @@ video.addEventListener('play', function(){
 					else {
 						let highlight = document.querySelector('.highlight');
 						let prevParagrah = highlight.parentNode;
-						console.log(prevParagrah);
 						let lastLine = prevParagrah.lastElementChild;
 						lastLine.removeAttribute('class');
 
@@ -57,6 +56,9 @@ video.addEventListener('play', function(){
 			document.addEventListener('click', function(event){
 
 
+				
+
+				//highlight an item when nothing has been clicked. Once item is clicked assign it to trackSelected
 
 				if (trackSelected == ""){
 					event.target.setAttribute('class', 'highlight');
@@ -64,15 +66,31 @@ video.addEventListener('play', function(){
 					video.currentTime = trackSelected.dataset.start;
 				}
 
+				// if item is selected check if the previous Paragraph and next Paragrah has any item highlighted. If so delete it.
 
 				else {
-					trackSelected = document.querySelector('.highlight');
-					trackSelected.removeAttribute('class');
-					event.target.setAttribute('class', 'highlight');
-					trackSelected = document.querySelector('.highlight');
-					video.currentTime = trackSelected.dataset.start;
+					let currentParagraph  = trackSelected.parentNode;
+					let nextParagraph = currentParagraph.nextElementSibling;
+					console.log(currentParagraph);
+					console.log(nextParagraph);
+					nextParagraph.querySelector('.highlight');
 
+
+					/*if (prevParagrah2.QuerySelector('.highlight')) { // searches for highlighted item in previous Paragraph
+
+						console.log('found item');
+
+
+					} */
+					
+
+						trackSelected.removeAttribute('class');
+						event.target.setAttribute('class', 'highlight');
+						trackSelected = document.querySelector('.highlight');
+						video.currentTime = trackSelected.dataset.start;
+				
 				}
+
 
 			});
 
