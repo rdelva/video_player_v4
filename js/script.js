@@ -69,20 +69,7 @@ video.addEventListener('play', function(){
 				// if item is selected check if the previous Paragraph and next Paragrah has any item highlighted. If so delete it.
 
 				else {
-					let currentParagraph  = trackSelected.parentNode;
-					let nextParagraph = currentParagraph.nextElementSibling;
-					console.log(currentParagraph);
-					console.log(nextParagraph);
-					nextParagraph.querySelector('.highlight');
-
-
-					/*if (prevParagrah2.QuerySelector('.highlight')) { // searches for highlighted item in previous Paragraph
-
-						console.log('found item');
-
-
-					} */
-					
+				
 
 						trackSelected.removeAttribute('class');
 						event.target.setAttribute('class', 'highlight');
