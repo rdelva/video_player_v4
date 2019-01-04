@@ -10,30 +10,33 @@ const video = document.querySelector('video');
 const script = document.querySelectorAll('span');
 const p = document.querySelectorAll('p');
 let trackSelected = "";
+const caption = document.querySelector('.caption');
 
 
-video.addEventListener('play', function(){
 
 
-	video.addEventListener('timeupdate', function() {
+video.addEventListener('play', () =>  {
 
-		let track = video.currentTime;  // keeps track of the track time.
-		let timer = Math.floor(video.duration);
+	
+		
+	video.addEventListener ('timeupdate', () => {
+
+		let track = video.currentTime;
+	
 
 
-		for (let i = 0; i < script.length;  i++){
+		for (let i = 0; i < script.length; i++ ) {
+
+			let start = script[i].getAttribute('data-start');
+			let end =  script[i].getAttribute('data-end');
+
+
+			if(track > start &&  track < end) {
 				
-				let dataStart = script[i].dataset.start;
-				let dataEnd = script[i].dataset.end;
-
-				if (track > dataStart && track < dataEnd ){
-					script[i].setAttribute('class', 'highlight');
-					let prevTrack = script[i].previousElementSibling;
-
-
-
+				script[i].setAttribute('class', 'highlight');
+				let prevTrack = script[i].previousElementSibling;
+				
 					if (prevTrack !== null) { // checks to see ifs not at the begining
-
 
 						prevTrack.removeAttribute('class');
 
@@ -45,46 +48,35 @@ video.addEventListener('play', function(){
 						let lastLine = prevParagrah.lastElementChild;
 						lastLine.removeAttribute('class');
 
-
 					}
 
-				}
-			
-		}// end of for loop
+			} 
 
+		}
 
-			document.addEventListener('click', function(event){
-
-
-				
-
-				//highlight an item when nothing has been clicked. Once item is clicked assign it to trackSelected
-
-				if (trackSelected == ""){
-					event.target.setAttribute('class', 'highlight');
-					trackSelected = document.querySelector('.highlight');
-					video.currentTime = trackSelected.dataset.start;
-				}
-
-				// if item is selected check if the previous Paragraph and next Paragrah has any item highlighted. If so delete it.
-
-				else {
-				
-
-						trackSelected.removeAttribute('class');
-						event.target.setAttribute('class', 'highlight');
-						trackSelected = document.querySelector('.highlight');
-						video.currentTime = trackSelected.dataset.start;
-				
-				}
-
-
-			});
-
-
-	});
-
+	});		
 
 });
 
 
+
+caption.addEventListener('click', (event) => {
+
+	if (trackSelected = ""){
+			if(event.target.tagName == 'SPAN'){
+			let currentTrack = event.target;
+			currentTrack.setAttribute('class', 'highlight');
+			video.currentTime = currentTrack.getAttribute('data-start');
+
+		} 
+	} else {
+
+		for (let i = 0; script.length; i++){
+			if (script[i].hasAttribute('class')){
+				script[i].removeAttribute('class');
+			}
+		}
+	}
+	
+
+});
