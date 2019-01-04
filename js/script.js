@@ -54,29 +54,42 @@ video.addEventListener('play', () =>  {
 
 		}
 
-	});		
-
-});
+	});	/* end of video addEventListener */
 
 
 
-caption.addEventListener('click', (event) => {
+	caption.addEventListener('click', (event) => {
+		let currentTrack
 
-	if (trackSelected = ""){
-			if(event.target.tagName == 'SPAN'){
-			let currentTrack = event.target;
-			currentTrack.setAttribute('class', 'highlight');
-			video.currentTime = currentTrack.getAttribute('data-start');
+		if (trackSelected = ""){
+				if(event.target.tagName == 'SPAN'){
+				 currentTrack = event.target;
+				currentTrack.setAttribute('class', 'highlight');
+				video.currentTime = currentTrack.getAttribute('data-start');
 
-		} 
-	} else {
+			} 
+		} else {
 
-		for (let i = 0; script.length; i++){
-			if (script[i].hasAttribute('class')){
-				script[i].removeAttribute('class');
+			for (let i = 0; i < script.length; i++){
+				if (script[i].className == "highlight"){
+					script[i].removeAttribute('class');
+				}
+				else {
+
+					if(event.target.tagName == 'SPAN'){
+						 currentTrack = event.target;
+						currentTrack.setAttribute('class', 'highlight');
+						video.currentTime = currentTrack.getAttribute('data-start');
+
+					}
+
+				}
 			}
 		}
-	}
-	
+		
+
+	});	
 
 });
+
+
