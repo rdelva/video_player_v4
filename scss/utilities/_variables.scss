@@ -1,16 +1,30 @@
-// Fonts
+// Fonts Stacks
+
+$font-family--primary: Arial, Helvetica, sans-serif;
 
 
-$white						:#fff;
-$pumpkin					:#fdb25e
-$grey						:#818181;
+//Text
+
+$base__font-size: 16px;
+$base__line: 24px;
 
 //Colors
 
-$primary-font-color					:$grey
-$seconday-font-color				:$pumpkin;
-$primary-color-colorRGB:			:rgba(253,178,94, 0.9);	
+$white						:#fff;
+$pumpkin					:#fdb25e;
+$grey						:#818181;
+$black						:#0C0C0C;
+$primary-font-color					:$black;
+$highlight							:$pumpkin;
 $background-color					:$white;
+
+
+//Breakpoints
+
+$brkpoint-xs							: 1px;
+$brkpoint-sm							: 480px;
+$brkpoint-m 							: 768px;
+$brkpoint-lg							: 1024px;
 
 
 

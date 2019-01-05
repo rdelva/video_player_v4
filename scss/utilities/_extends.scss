@@ -1,0 +1,22 @@
+%wrapper {
+
+	@include mq(small) {
+	
+		max-width:$brkpoint-sm;
+	}	
+
+		
+	@include mq(medium) {
+	
+		max-width:$brkpoint-m;
+
+	}
+
+	@include mq(large) {
+	
+		max-width:$brkpoint-lg;
+
+	}
+	
+}
+

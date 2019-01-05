@@ -1,0 +1,15 @@
+
+.wrapper {
+	
+	margin: 10px auto;
+	width: 90%;
+	background-color:$background-color;
+	padding:10px 20px;
+	@extend %wrapper;
+}	
+
+.caption {
+	margin-top:10px;
+	line-height: line-height(24px, 16px);
+	font: em(24px)  $font-family--primary;
+}

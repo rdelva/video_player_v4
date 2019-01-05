@@ -1,0 +1,23 @@
+video {
+
+	max-width: 100%;
+}
+
+.video_wrapper {
+	
+		margin:0 auto;
+		display: block;
+		width:auto;
+		height:auto;
+}
+
+
+.mejs__time-current,
+.mejs__time-handle-content {
+    background: rgba(253,178,94, 0.9);
+}
+
+.mejs__time {
+	color:$pumpkin;
+	font-size:24px;
+}

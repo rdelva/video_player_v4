@@ -8,8 +8,6 @@ $('video').mediaelementplayer({
 
 const video = document.querySelector('video');
 const script = document.querySelectorAll('span');
-const p = document.querySelectorAll('p');
-let trackSelected = "";
 const caption = document.querySelector('.caption');
 
 
@@ -59,7 +57,8 @@ video.addEventListener('play', () =>  {
 
 
 	caption.addEventListener('click', (event) => {
-		let currentTrack
+		let currentTrack;
+		let trackSelected = "";
 
 		if (trackSelected = ""){
 				if(event.target.tagName == 'SPAN'){
@@ -88,8 +87,8 @@ video.addEventListener('play', () =>  {
 		}
 		
 
-	});	
+	});	/* end of caption add Event Listener --*/
 
-});
+}); /* end of video add Event Listener --*/
 
 

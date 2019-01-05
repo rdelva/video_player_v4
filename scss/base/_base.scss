@@ -8,24 +8,10 @@
 }		
 
 body {
-	font-family: $font-family--primary;
+	background-color: $background-color;
+
 
 }
 
-p{
-	@include text(16px, $font-weight--light);
-	font-family: $font-family--primary;
 
-	.container  &  {
-		color: $stormCloud;
-	}
-}
-
-
-ul {
-
-	list-style-type: none;
-	padding:0;
-
-}
 
