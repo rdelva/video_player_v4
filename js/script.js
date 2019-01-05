@@ -56,6 +56,11 @@ video.addEventListener('play', () =>  {
 
 
 
+
+}); /* end of video add Event Listener --*/
+
+
+
 	caption.addEventListener('click', (event) => {
 		let currentTrack;
 		let trackSelected = "";
@@ -88,7 +93,3 @@ video.addEventListener('play', () =>  {
 		
 
 	});	/* end of caption add Event Listener --*/
-
-}); /* end of video add Event Listener --*/
-
-
